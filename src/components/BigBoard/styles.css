@@ -1,0 +1,15 @@
+.big-board {
+    width: calc(100vw - 30vmin);
+    max-width: 100vh;
+    height: calc(100vw - 30vmin);
+    max-height: 100vh;
+    padding: 1vmin;
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1vmin;
+    align-items: center;
+    justify-items: center;
+}

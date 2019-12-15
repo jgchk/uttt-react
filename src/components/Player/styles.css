@@ -1,0 +1,54 @@
+.player-container {
+    flex: 1;
+    max-width: 19vmin;
+}
+
+.player {
+    width: 15vmin;
+    height: 5vmin;
+    padding-bottom: .6vmin;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    color: var(--bkg);
+    font-size: 3vmin;
+    font-weight: bold;
+    text-align: center;
+}
+
+.player--p1 {
+    float: left;
+    background: var(--p1);
+}
+
+.player--p2 {
+    float: right;
+    background: var(--p2);
+}
+
+.player--move {
+    height: 15vmin;
+    animation: drop .4s var(--overshoot);
+    transition: opacity .4s var(--overshoot);
+    opacity: 1;
+}
+
+.player--wait {
+    animation: retract .4s ease;
+    transition: opacity .4s ease;
+    opacity: .5;
+}
+
+@keyframes drop {
+    from {height: 5vmin}
+    to {height: 15vmin}
+}
+
+@keyframes retract {
+    from {height: 15vmin}
+    to {height: 5vmin}
+}

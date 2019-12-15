@@ -1,0 +1,22 @@
+.board__space {
+    background: var(--tie);
+    transition: background .4s ease;
+}
+
+.board__space--p1 {
+    background: var(--p1);
+}
+
+.board__space--p2 {
+    background: var(--p2);
+}
+
+.board--playable .board__space--none {
+    cursor: pointer;
+    transition-duration: .2s;
+}
+
+.board--playable .board__space--none:hover {
+    background: var(--hover);
+    transition-duration: .1s;
+}

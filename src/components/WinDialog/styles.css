@@ -1,0 +1,78 @@
+.win-dialog {
+    display: none;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5vmin;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+
+    z-index: 1;
+    text-align: center;
+    color: var(--bkg);
+    padding: 10px;
+    background: var(--p1);
+}
+
+.win-dialog--winner {
+    display: grid;
+    animation: enter .8s ease;
+}
+
+.win-dialog--p1 {
+    background: var(--p1);
+}
+
+.win-dialog--p2 {
+    background: var(--p2);
+}
+
+.win-dialog--p3 {
+    background: var(--tie);
+}
+
+.win-dialog__winner {
+    font-weight: bold;
+    font-size: 10vmin;
+    margin-bottom: 1vmin;
+}
+
+.win-dialog__play-again {
+    height: 10vmin;
+    width: 10vmin;
+    fill: var(--bkg);
+    stroke: var(--bkg);
+    cursor: pointer;
+    transition: transform .2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.win-dialog__play-again:hover {
+    transform: rotateZ(15deg);
+}
+
+.win-dialog--animate .win-dialog__play-again {
+    animation: spin .8s;
+}
+
+.win-dialog--animate {
+    animation: exit .8s ease-in;
+}
+
+@keyframes spin {
+    from {transform: rotateZ(15deg)}
+    to {transform: rotateZ(360deg)}
+}
+
+@keyframes enter {
+    from {transform: translateY(-50%) translateX(-100%)}
+    to {transform: translateY(-50%) translateX(0)}
+}
+
+@keyframes exit {
+    from {transform: translateY(-50%) translateX(0)}
+    to {transform: translateY(-50%) translateX(-100%)}
+}
